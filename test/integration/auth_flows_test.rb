@@ -7,7 +7,6 @@ class AuthFlowsTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_path
     user = users(:one)
     user.confirm
-    
     sign_in user
     get root_path
     assert_response :success
