@@ -54,6 +54,12 @@ gem "faker"
 #to assign role
 gem "rolify"
 
+#asset-compile
+gem "sassc"
+
+#debugger
+gem "pry"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
