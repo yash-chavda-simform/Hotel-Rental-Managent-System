@@ -1,0 +1,64 @@
+<div class="container card w-50 p-5 my-3 border">
+  <h1 class="text-center">Profile Details</h1>
+  <div class="form-control-solid">
+    <%= form_with model: @user, url: profile_path do |form| %>
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <%= form.label :first_name %><br/>
+            <%= form.text_field :first_name, id:"form3Example1", class:"form-control", autofocus: true, autocomplete: "first_name" %>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <%= form.label :last_name %><br/>
+            <%= form.text_field :last_name, id:"form3Example2", class:"form-control", autocomplete: "last_name" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-outline mb-4">
+        <%= form.label :email %><br />
+        <%= form.email_field :email, id:"form3Example3", class: "form-control",autocomplete: "email" %>
+      </div>
+      <%= form.label :phone_no, "Phone Number:" %>
+      <%= form.text_field :phone_no, class:"form-control" %>
+      <div class="text-danger" >
+        <%= @user.errors.full_messages_for(:phone_no).first %>
+      </div>
+      <br>
+      <%= form.label "Select Gender:" %><br>
+      <%= form.radio_button :gender, "Male" %>
+      <%= form.label :for_male, "Male" %>
+      <%= form.radio_button :gender, "Female" %>
+      <%= form.label :for_female, "Female" %>
+      <%= form.radio_button :gender, "Others" %>
+      <%= form.label :for_others, "Others" %><br>
+      <div class="text-danger" >
+        <%= @user.errors.full_messages_for(:gender).first %>
+      </div>
+      <br>
+      <br>
+      <%= form.label "Job occupation:" %>
+      <%= form.text_field :work, class:"form-control" %><br>
+      <%= form.label "Pets:" %>
+      <%= form.text_field :pets, class:"form-control" %><br>
+      <%= form.label "Driving License Number:" %>
+      <%= form.text_field :driving_license_no, class: "form-control" %>
+      <div class="text-danger">
+        <%= @user.errors.full_messages_for(:driving_license_no).first %>
+      </div>
+      <br>
+      <%= form.label "Birth Date:" %>
+      <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+        <%= form.date_field :date_of_birth, class: "form-control" %>
+        <div class="text-danger">
+          <%= @user.errors.full_messages_for(:date_of_birth).first %>
+        </div>
+      </div>
+      <br>
+      <%= form.hidden_field :access_token, value: "profile" %>
+      <%= form.submit "Save",  class: "btn btn-primary" %><br>
+    <% end %><br>
+    <%= link_to "Back", places_path, class: "btn btn-primary" %>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+//
+// Text truncation
+//
+@import '../mixins/text-truncate';
+
+.text-truncate {
+  @include text-truncate();
+}

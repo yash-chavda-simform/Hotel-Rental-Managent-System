@@ -1,0 +1,25 @@
+<section class="containers forms">
+  <div class = "form login">
+    <div class="form-content">
+      <header>Change your password</header>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= f.hidden_field :reset_password_token %>
+
+        <div class="field">
+          <%= f.password_field :password, placeholder:"New password", autofocus: true, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password_confirmation, placeholder:"Confirm new password", autocomplete: "new-password" %>
+        </div>
+
+        <div class="actions field button-field">
+          <%= f.submit "Change my password", class: "button-color" %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</section>
