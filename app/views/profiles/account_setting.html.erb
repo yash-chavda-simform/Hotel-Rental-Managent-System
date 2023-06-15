@@ -1,4 +1,16 @@
-<div class="container text-center card w-50 p-4 my-3 border border-dark"> 
-<h2>Account Setting</h2>
-  
+<div class="container card w-50 p-4 my-3 border border-dark">
+  <div class = "text-center" >
+    <h2>Account Setting</h2>
+  </div>
+  <div>
+    <h5>change account password</h5>
+    <%= link_to "change password", edit_user_registration_path("change"), class: "btn btn-sm btn-primary rounded py-2 px-4" %><br/>
+    <br/>
+    <h5>delete your account</h5>
+    <%= link_to "delete account", edit_user_registration_path("delete"), class: "btn btn-sm btn-primary rounded py-2 px-4" %><br/>
+    <br/>
+    <h5>signout from your account</h5>
+    <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-sm btn-primary rounded py-2 px-4" %><br/><br/>
+    <%= link_to "Back", places_path, class: "btn btn-sm btn-primary rounded py-2 px-4" %>
+  </div>
 </div>

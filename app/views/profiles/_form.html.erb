@@ -2,6 +2,24 @@
   <h1 class="text-center">Profile Details</h1>
   <div class="form-control-solid">
     <%= form_with model: @user, url: profile_path do |form| %>
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <%= form.label :first_name %><br/>
+            <%= form.text_field :first_name, id:"form3Example1", class:"form-control", autofocus: true, autocomplete: "first_name" %>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <%= form.label :last_name %><br/>
+            <%= form.text_field :last_name, id:"form3Example2", class:"form-control", autocomplete: "last_name" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-outline mb-4">
+        <%= form.label :email %><br />
+        <%= form.email_field :email, id:"form3Example3", class: "form-control",autocomplete: "email" %>
+      </div>
       <%= form.label :phone_no, "Phone Number:" %>
       <%= form.text_field :phone_no, class:"form-control" %>
       <div class="text-danger" >
@@ -38,6 +56,7 @@
         </div>
       </div>
       <br>
+      <%= form.hidden_field :access_token, value: "profile" %>
       <%= form.submit "Save",  class: "btn btn-primary" %><br>
     <% end %><br>
     <%= link_to "Back", places_path, class: "btn btn-primary" %>
