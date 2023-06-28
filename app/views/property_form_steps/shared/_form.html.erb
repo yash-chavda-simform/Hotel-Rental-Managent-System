@@ -1,0 +1,47 @@
+<%= form_with model: @property, url: path, method: method do |form| %>
+  <%= render "property_form_steps/shared/error_message" %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <%= form.label :property_type, "Property type:" %>
+        <%= form.select :property_type, Property.property_types.map{ |key, value| [key.titleize, key]} %>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <%= form.label :stay_area, "Stay area:" %>
+        <%= form.select :stay_area, Property.stay_areas.map {|key, value| [key.titleize, key]} %>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <%= form.label :total_guest_capacity, "Total guest capacity:" %>
+        <%= form.number_field :total_guest_capacity, in: 1.0..1000, id:"form3Example3", class: "form-control" %><br/>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <%= form.label :total_room %>
+        <%= form.number_field :total_room, in: 1.0..100, id:"form3Example3", class: "form-control" %><br/>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <%= form.label :total_bed %>
+        <%= form.number_field :total_bed, in: 1.0..300, id:"form3Example3", class: "form-control" %><br/>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <%= form.label :total_bathroom %>
+        <%= form.number_field :total_bathroom, in: 1.0..100, id:"form3Example3", class: "form-control" %><br/>
+      </div>
+    </div>
+  </div>
+  <%= form.submit "Continue", class: "btn btn-primary" %>
+<% end %>

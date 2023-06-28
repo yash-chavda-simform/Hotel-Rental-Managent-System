@@ -1,0 +1,8 @@
+<%= render "property_form_steps/shared/progress_bar" %>
+<div class="container card w-50 p-5 my-3 border">
+  <h3 class="text-center">Property Type</h3>
+  <div class="form-control-solid">
+  <%= @path = "wizard_path" %>
+    <%= render partial: "property_form_steps/shared/form", locals: { path: wizard_path, method: :patch} %>
+  </div>
+</div>

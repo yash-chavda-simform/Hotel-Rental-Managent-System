@@ -1,0 +1,20 @@
+<%= render "property_form_steps/shared/progress_bar" %>
+<div class="container card w-50 p-5 my-3 border">
+  <h3 class="text-center">About Your Place</h3>
+  <div class="form-control-solid">
+    <h3>About Your Place</h3>
+    <%= form_with model: @property, url: wizard_path, method: :patch do |form| %>
+      <%= render "property_form_steps/shared/error_message" %>
+      <div class="form-outline">
+        <%= form.label :description %>
+        <%= form.text_area :description, id:"form3Example3", class: "form-control"  %><br/>
+      </div>
+      <div class="form-outline">
+        <%= form.label :rule %>
+        <%= form.text_area :rule_list, id:"form3Example3", class: "form-control"  %><br/>
+      </div>
+      <%= form.submit "continue", class: "btn btn-primary" %>
+      <%= link_to "Previous", previous_wizard_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

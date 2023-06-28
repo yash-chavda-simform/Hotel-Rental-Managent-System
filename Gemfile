@@ -54,6 +54,9 @@ gem "faker"
 #to assign role
 gem "rolify"
 
+#act_as_taggable-on
+gem 'acts-as-taggable-on'
+
 #asset-compile
 gem "sassc"
 
@@ -85,3 +88,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+#upload photos
+gem "carrierwave"
+
+#for step form
+gem "wicked"

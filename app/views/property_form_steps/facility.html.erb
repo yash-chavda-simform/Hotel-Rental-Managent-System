@@ -1,0 +1,19 @@
+<%= render "property_form_steps/shared/progress_bar" %>
+<div class="container card w-50 p-5 my-3 border">
+  <h3 class="text-center">Facility</h3>
+  <%= render "property_form_steps/shared/error_message" %>
+  <div class="form-control-solid">
+    <%= form_with model: @property, url: wizard_path, method: :patch do |form| %>
+      <% facilities = ['Wifi', 'Tv', 'Kitchen', 'Washer', 'Free parking', 'Paid parking', 'Ac', 'Pool', 'Hot tub', 'Piano', 'Excercise equipment', 'First aid kit', 'Nothing'] %>
+      <h5>Select Atleast One</h5><br/>
+      <% facilities.each do |facility| %>
+        <div class="form-check">
+          <%= form.check_box :facility, { multiple: true }, facility, false %>
+          <%= form.label :facility, facility, class:"form-check-label", for:"flexCheckDefault" %><br/>
+        </div>
+      <% end %><br/>
+      <%= form.submit "continue", class: "btn btn-primary" %>
+      <%= link_to "Previous", previous_wizard_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

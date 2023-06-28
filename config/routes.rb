@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "places#index"
   resources :places
+  resources :properties
+  resources :property_form_steps
   resources :profiles, only: [ :edit, :update]
   scope "/users" do
     get "account_settings", to: "profiles#account_setting"

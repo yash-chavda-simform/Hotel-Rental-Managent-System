@@ -24,6 +24,7 @@
 @import 'tempusdominus/css/tempusdominus-bootstrap-4.css';
 @import 'tempusdominus/css/tempusdominus-bootstrap-4.min.css';
 @import 'style.css';
+@import 'progress_bar.css';
 @import 'bootstrap.min.css';
 
 @import 'bootstrap.scss';

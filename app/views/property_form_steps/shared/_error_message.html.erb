@@ -1,8 +1,8 @@
-<% if resource.errors.any? %>
+<% if @property.errors.any? %>
   <div class="alert alert-danger" >
     <div id="error_explanation" data-turbo-cache="false">
       <ul>
-        <% resource.errors.each do |message| %>
+        <% @property.errors.each do |message| %>
           <li><%= message.full_message %></li>
         <% end %>
       </ul>

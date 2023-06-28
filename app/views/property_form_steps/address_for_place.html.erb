@@ -1,0 +1,53 @@
+<%= render "property_form_steps/shared/progress_bar" %>
+<div class="container card w-50 p-5 my-3 border">
+  <h3 class="text-center">Address Of Your Place</h3>
+  <%= render "property_form_steps/shared/error_message" %>
+  <div class="form-control-solid">
+    <%= form_with model: @property, url: wizard_path, method: :put do |form| %>
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <%= form.label :house_name %>
+            <%= form.text_field :house_name, id:"form3Example3", class: "form-control" %><br/>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <%= form.label :street_name %>
+            <%= form.text_field :street_name, id:"form3Example3", class: "form-control" %><br/>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <%= form.label :city %>
+            <%= form.text_field :city, id:"form3Example3", class: "form-control" %><br/>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <%= form.label :state %>
+            <%= form.text_field :state, id:"form3Example3", class: "form-control" %><br/>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <%= form.label :pincode %>
+            <%= form.text_field :pincode, id:"form3Example3", class: "form-control" %><br/>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <%= form.label :country_name %>
+            <%= form.text_field :country_name, id:"form3Example3", class: "form-control" %><br/>
+          </div>
+        </div>
+      </div>
+      <%= form.submit "continue", class: "btn btn-primary" %>
+      <%= link_to "Previous", previous_wizard_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
